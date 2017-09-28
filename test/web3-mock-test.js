@@ -60,8 +60,28 @@ describe('Web3 mock module',
                 expect(web3Test.isConnected()).to.equal(true);
 
             }
+        );
+
+        it('Should return whether the blockchain is syncing or not',
+            function(done){
+
+                web3Test.eth.getSyncing(
+                    function(error, result){
+
+                        expect(error).to.equal(null);
+                        expect(result).to.equal(false);
+
+                        expect(web3Test.eth.syncing).to.equal(false);
+
+                        done();
+
+                    }
+                )
+
+            }
         )
 
+        
 
 
     }
