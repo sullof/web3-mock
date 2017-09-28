@@ -128,8 +128,24 @@ describe('Web3 mock module',
                 )
 
             }
-        )
+        );
 
+        it('Should retrieve the gas price',
+            function(done){
+
+                web3Test.eth.getGasPrice(
+                    function(error, result){
+
+                        expect(error).to.equal(null);
+                        expect(result.toString(10)).to.equal('10000000000');
+
+                        done()
+
+                    }
+                )
+
+            }
+        )
 
     }
 );
