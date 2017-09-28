@@ -166,6 +166,31 @@ describe('Web3 mock module',
 
 
             }
+        );
+
+        it('Should determine if a string is an address',
+            function(){
+
+                expect(web3Test.isAddress()).to.equal(true);
+
+            }
+        );
+
+        it('Should retrieve an account balance',
+            function(done){
+
+                web3Test.eth.getBalance(
+                    function(error, balance){
+
+                        expect(error).to.equal(null);
+                        expect(balance.toString(10)).to.equal('10000000');
+
+                        done();
+
+                    }
+                );
+
+            }
         )
 
     }
