@@ -18,8 +18,15 @@ describe('Web3 mock module',
                 ).to.throw();
 
             }
-        )
+        );
 
+        it('Should have an HttpProvider object',
+            function(){
+
+                expect(Web3.providers).to.not.be.undefined;
+
+            }
+        )
 
 
 
