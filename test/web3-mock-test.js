@@ -112,6 +112,22 @@ describe('Web3 mock module',
                 );
 
             }
+        );
+
+        it('Should retrieve the peer count',
+            function(done){
+
+                web3Test.net.getPeerCount(
+                    function(error, result){
+
+                        expect(error).to.equal(null);
+                        expect(result).to.equal(120);
+
+                        done();
+                    }
+                )
+
+            }
         )
 
 
