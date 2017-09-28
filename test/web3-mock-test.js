@@ -1,17 +1,26 @@
 
 var chai = require('chai'),
-    expect = chai.expect;
+    expect = chai.expect,
+    Web3 = require('../lib/web3mock');
 
 describe('Web3 mock module',
     function(){
 
-        it('Should be true',
+        it('Should require a provider to be provided to the constructor',
             function(){
 
-                expect(true).to.equal(true);
+                expect(
+                    function(){
+
+                        Web3()
+
+                    }
+                ).to.throw();
 
             }
         )
+
+
 
 
 
