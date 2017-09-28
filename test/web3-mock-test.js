@@ -191,6 +191,34 @@ describe('Web3 mock module',
                 );
 
             }
+        );
+
+        var filter = null;
+
+        it('Should start a watch for the latest block',
+            function(done){
+
+                filter = web3Test.eth.filter('latest');
+
+                filter.watch(
+                    function(error, result){
+
+                        expect(error).to.equal(null);
+                        done();
+                    }
+                )
+
+            }
+        );
+
+        it('Should stop a watch for the latest block',
+            function(){
+
+                filter.stopWatching();
+
+                // Not much to test here...
+
+            }
         )
 
     }
