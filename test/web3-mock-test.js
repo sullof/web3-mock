@@ -79,9 +79,24 @@ describe('Web3 mock module',
                 )
 
             }
+        );
+
+        it('Should get the latest block number',
+            function(done){
+
+                web3Test.eth.getBlockNumber(
+                    function(error, result){
+
+                        expect(error).to.equal(null);
+                        expect(result).to.equal(2744);
+
+                        done();
+                    }
+                )
+
+            }
         )
 
-        
 
 
     }
