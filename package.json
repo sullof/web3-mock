@@ -21,5 +21,9 @@
   "bugs": {
     "url": "https://github.com/link-blockchain/web3-mock/issues"
   },
-  "homepage": "https://github.com/link-blockchain/web3-mock#readme"
+  "homepage": "https://github.com/link-blockchain/web3-mock#readme",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^3.5.3"
+  }
 }
