@@ -100,7 +100,9 @@ describe('Web3 mock module',
         it('Should retrieve a given block',
             function(done){
 
-                web3Test.eth.getBlock(
+                var blockHash = '0xaf4a217f6cc6f8c79530203372f3fbec160da83d1abe048625a390ba1705dd57';
+
+                web3Test.eth.getBlock(blockHash,
                     function(error, block){
 
                         expect(error).to.equal(null);
@@ -143,6 +145,25 @@ describe('Web3 mock module',
 
                     }
                 )
+
+            }
+        );
+
+        it('Should retrieve a given transaction',
+            function(done){
+
+                var txHash = '0xaf4a217f6cc6f8c79530203372f3fbec160da83d1abe048625a390ba1705dd57';
+
+                web3Test.eth.getTransaction(txHash,
+                    function(error, transaction){
+
+                        expect(error).to.equal(null);
+                        expect(transaction.nonce).to.equal('0x6');
+
+                        done();
+                    }
+                )
+
 
             }
         )
