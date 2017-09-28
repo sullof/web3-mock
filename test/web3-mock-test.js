@@ -95,8 +95,24 @@ describe('Web3 mock module',
                 )
 
             }
-        )
+        );
 
+        it('Should retrieve a given block',
+            function(done){
+
+                web3Test.eth.getBlock(
+                    function(error, block){
+
+                        expect(error).to.equal(null);
+                        expect(block.hash).to.equal("0x37cb73b97d28b4c6530c925d669e4b0e07f16e4ff41f45d10d44f4c166d650e5");
+
+                        done();
+
+                    }
+                );
+
+            }
+        )
 
 
     }
