@@ -7,6 +7,8 @@ var chai = require('chai'),
 describe('Web3 mock module',
     function(){
 
+        var latestBlockNumber = 2744; // Arbitrary.
+
         it('Should require a provider to be provided to the constructor',
             function(){
 
@@ -88,7 +90,7 @@ describe('Web3 mock module',
                     function(error, result){
 
                         expect(error).to.equal(null);
-                        expect(result).to.equal(2744);
+                        expect(result).to.equal(latestBlockNumber);
 
                         done();
                     }
@@ -97,12 +99,12 @@ describe('Web3 mock module',
             }
         );
 
-        it('Should retrieve a given block',
+        it('Should retrieve a given block by number',
             function(done){
 
-                var blockHash = '0xaf4a217f6cc6f8c79530203372f3fbec160da83d1abe048625a390ba1705dd57';
+                var blockNumber = latestBlockNumber - 3;
 
-                web3Test.eth.getBlock(blockHash,
+                web3Test.eth.getBlock(blockNumber,
                     function(error, block){
 
                         expect(error).to.equal(null);
